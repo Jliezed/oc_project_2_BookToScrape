@@ -68,13 +68,13 @@ def parse_product_page(url_product):
     return product_page_info
 
 # Download and save image
-def save_image(url_image):
-    image_response = requests.get(url_image)
-    soup_image = BeautifulSoup(image_response.content, "html.parser")
-    image_alt = soup_image.find("div", class_="carousel-inner").find_next("img")["alt"]
-    file_image = open(image_alt.replace(" ", "_") + ".png", "wb")
-    file_image.write(image_response.content)
-    file_image.close()
+#def save_image(url_image):
+#    image_response = requests.get(url_image)
+#    soup_image = BeautifulSoup(image_response.content, "html.parser")
+#    image_alt = soup_image.find("div", class_="carousel-inner").find_next("img")["alt"]
+#    file_image = open(image_alt.replace(" ", "_") + ".png", "wb")
+#    file_image.write(image_response.content)
+#    file_image.close()
 
 
 
