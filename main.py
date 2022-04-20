@@ -3,7 +3,12 @@ from bs4 import BeautifulSoup
 import re
 import csv
 
-# Functions
+
+"""
+FUNCTIONS
+"""
+
+# Parse URLs links of product pages
 def parse_links_products_pages(url):
     page = requests.get(url)
     soup_product_page = BeautifulSoup(page.content, "html.parser")
@@ -13,7 +18,7 @@ def parse_links_products_pages(url):
         link_product_page = url_base + "catalogue/" + item.a["href"][9:]
         list_links_products_pages.append(link_product_page)
 
-
+# Parse product information in product page
 def parse_product_page(url_product):
     page_response = requests.get(url_product)
     soup_page = BeautifulSoup(page_response.content, 'html.parser')
@@ -46,6 +51,7 @@ def parse_product_page(url_product):
     image_url = soup_page.find("div", class_="carousel-inner").find_next("img")
     image_url_text = "http://books.toscrape.com" + image_url["src"][5:]
 
+
     product_page_info = [
         product_page_url,
         universal_product_code,
@@ -61,23 +67,36 @@ def parse_product_page(url_product):
 
     return product_page_info
 
+# Download and save image
+def save_image(url_image):
+    image_response = requests.get(url_image)
+    soup_image = BeautifulSoup(image_response.content, "html.parser")
+    image_alt = soup_image.find("div", class_="carousel-inner").find_next("img")["alt"]
+    file_image = open(image_alt.replace(" ", "_") + ".png", "wb")
+    file_image.write(image_response.content)
+    file_image.close()
 
-# Get links by category pages
+
+
+"""
+MAIN BLOC
+"""
+
 url_base = "http://books.toscrape.com/"
 
 page = requests.get(url_base)
 soup = BeautifulSoup(page.content, "html.parser")
 
-
+# Get links by category pages
 categories_div = soup.find("div", class_="side_categories")
 links_categories = categories_div.find_all("a")
 
 list_links_categories = []
-for link in links_categories[1:]:
+for link in links_categories[1:5]:
     link = url_base + link["href"]
     list_links_categories.append(link)
 
-
+# Parse categories links
 for link_category in list_links_categories:
     link_response = requests.get(link_category)
     soup_category = BeautifulSoup(link_response.content, "html.parser")
@@ -87,9 +106,11 @@ for link_category in list_links_categories:
     list_links_products_pages = []
     parse_links_products_pages(link_category)
 
+    # Parse next page link
     next = soup_category.find("a", string="next")
     if next != None:
         link_next = link_category[0:-10] + next["href"]
+        # Function parse URLs links of product pages
         parse_links_products_pages(link_next)
 
     # Create CSV file
@@ -109,5 +130,6 @@ for link_category in list_links_categories:
         writer = csv.writer(fichier_csv, delimiter=",")
         writer.writerow(en_tete)
         for link_product in list_links_products_pages:
+            # Function parse product information in product page
             product_info = parse_product_page(link_product)
             writer.writerow(product_info)
