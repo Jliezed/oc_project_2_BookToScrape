@@ -90,7 +90,7 @@ Understand the logic with the flowchart below:
   - Insert product information in the CSV
   - Save the image of the book
 
-![Product Name Screen Shot](Flowchart.png)
+![Product Name Screen Shot](image/Flowchart.png)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
