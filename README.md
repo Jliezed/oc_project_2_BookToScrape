@@ -173,7 +173,7 @@ It will also save product image for each product page.
 
 Jliezed
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/Jliezed/oc_project_2_BookToScrape)
+Project Link: [https://github.com/Jliezed/oc_project_2_BookToScrape](https://github.com/Jliezed/oc_project_2_BookToScrape)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
