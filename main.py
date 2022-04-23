@@ -22,6 +22,7 @@ for link in links_categories[1:]:
     link = url_base + link["href"]
     list_links_categories.append(link)
 
+
 # Parse categories links
 for link_category in list_links_categories:
     link_response = requests.get(link_category)
@@ -30,14 +31,28 @@ for link_category in list_links_categories:
     category_name = soup_category.h1.string
     list_links_products_pages = parse_links_products_pages(link_category)
 
-    # Parse next page link
-    next_page = soup_category.find("a", string="next")
-    if next_page:
-        link_next = link_category[0:-10] + next_page["href"]
+    # Get next page link
+    list_next_pages = []
+    first_next_page = soup_category.find("a", string="next")
+    if first_next_page:
+        first_next_page_link = link_category[0:-10] + first_next_page["href"]
+        list_next_pages.append(first_next_page_link)
+
+    # For each next page link
+    for next_page in list_next_pages:
         # Function parse URLs links of product pages
-        new_links = parse_links_products_pages(link_next)
+        new_links = parse_links_products_pages(next_page)
         for new_link in new_links:
             list_links_products_pages.append(new_link)
+
+        # Check in this next page if there is another next page, if yes, add it to list_next_pages
+        following_next_page = requests.get(next_page)
+        soup_following_next_page = BeautifulSoup(following_next_page.content, "html.parser")
+
+        following_page = soup_following_next_page.find("a", string="next")
+        if following_page:
+            following_page_link = link_category[0:-10] + following_page["href"]
+            list_next_pages.append(following_page_link)
 
     # Create CSV file
     en_tete = ["product_page_url",
@@ -51,7 +66,7 @@ for link_category in list_links_categories:
                "review_rating",
                "image_url_text",
                ]
-    print(list_links_products_pages)
+
     with open("data_"+category_name+".csv", "w") as fichier_csv:
         writer = csv.writer(fichier_csv, delimiter=",")
         writer.writerow(en_tete)
@@ -59,4 +74,5 @@ for link_category in list_links_categories:
             # Function parse product information in product page
             product_info = parse_product_page(link_product)
             writer.writerow(product_info[0])
+            # Function save image of each product page
             save_image(product_info[1], product_info[2])
