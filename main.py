@@ -18,7 +18,7 @@ categories_div = soup.find("div", class_="side_categories")
 links_categories = categories_div.find_all("a")
 
 list_links_categories = []
-for link in links_categories[4:10]:
+for link in links_categories[1:]:
     link = url_base + link["href"]
     list_links_categories.append(link)
 
@@ -51,7 +51,7 @@ for link_category in list_links_categories:
                "review_rating",
                "image_url_text",
                ]
-
+    print(list_links_products_pages)
     with open("data_"+category_name+".csv", "w") as fichier_csv:
         writer = csv.writer(fichier_csv, delimiter=",")
         writer.writerow(en_tete)
