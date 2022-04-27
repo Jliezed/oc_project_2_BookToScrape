@@ -47,7 +47,9 @@ for link_category in list_links_categories:
 
         # Check in this next page if there is another next page, if yes, add it to list_next_pages
         following_next_page = requests.get(next_page)
-        soup_following_next_page = BeautifulSoup(following_next_page.content, "html.parser")
+        soup_following_next_page = BeautifulSoup(
+            following_next_page.content, "html.parser"
+        )
 
         following_page = soup_following_next_page.find("a", string="next")
         if following_page:
@@ -55,19 +57,20 @@ for link_category in list_links_categories:
             list_next_pages.append(following_page_link)
 
     # Create CSV file
-    en_tete = ["product_page_url",
-               "universal_product_code",
-               "title",
-               "price_including_tax",
-               "price_excluding_tax",
-               "number_available",
-               "product_description",
-               "category",
-               "review_rating",
-               "image_url_text",
-               ]
+    en_tete = [
+        "product_page_url",
+        "universal_product_code",
+        "title",
+        "price_including_tax",
+        "price_excluding_tax",
+        "number_available",
+        "product_description",
+        "category",
+        "review_rating",
+        "image_url_text",
+    ]
 
-    with open("data_"+category_name+".csv", "w") as fichier_csv:
+    with open("data_" + category_name + ".csv", "w") as fichier_csv:
         writer = csv.writer(fichier_csv, delimiter=",")
         writer.writerow(en_tete)
         for link_product in list_links_products_pages:

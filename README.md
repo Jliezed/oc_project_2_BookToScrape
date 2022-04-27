@@ -130,33 +130,31 @@ Install Python libraries before to clone the repo:
    ```sh
    git clone https://github.com/Jliezed/oc_project_2_BookToScrape.git
    ```
-2. Install the packages using requirements.txt
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the script using the terminal
-   ```sh
-   python main.py
-   ```
-
-### Create and activate a virtual environment
-These steps need to be done before step 2 (installation of packages using requirements.txt)
-
-1. Go to your project directory
+#### Create and activate a virtual environment
+2. Go to your project directory
    ```sh
    cd /oc_project_2_BookToScrape
    ```
-2. Install venv library (if not yet in your computer)
+3. Install venv library (if not yet in your computer)
    ```sh
    pip install venv
    ```
-3. Create a virtual environment
+4. Create a virtual environment
    ```sh
    python -m venv env
    ```
-4. Activate the virtual environment
+5. Activate the virtual environment
    ```sh
    source env/bin/activate
+   ```
+---
+6. Install the packages using requirements.txt
+   ```sh
+   pip install -r requirements.txt
+   ```
+7. Run the script using the terminal
+   ```sh
+   python main.py
    ```
 
 
