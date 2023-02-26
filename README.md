@@ -17,10 +17,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+
+[![oc-project-shield][oc-project-shield]][oc-project-url]
+[![web-scraping-shield][web-scraping-shield]][oc-project-url]
+[![beautiful-soup-shield][beautifulsoup-shield]][oc-project-url]
+
+
 
 
 
@@ -33,41 +35,8 @@
   <p align="center">
     From <a href="https://books.toscrape.com/"> Book To Scrape</a>, get product information of all products pages into a CSV file using Requests, Beautiful Soup, CSV and RE libraries.
     <br />
-    <a href="https://github.com/Jliezed/oc_project_2_BookToScrape"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Jliezed/oc_project_2_BookToScrape">View Demo</a>
-    ·
-    <a href="https://github.com/Jliezed/oc_project_2_BookToScrape/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Jliezed/oc_project_2_BookToScrape/issues">Request Feature</a>
-  </p>
+</p>
 </div>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#outputs">Outputs</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 
 
@@ -186,14 +155,6 @@ It will also save product image for each product page.
 
 
 
-<!-- CONTACT -->
-## Contact
-
-Jliezed
-
-Project Link: [https://github.com/Jliezed/oc_project_2_BookToScrape](https://github.com/Jliezed/oc_project_2_BookToScrape)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -202,16 +163,7 @@ Project Link: [https://github.com/Jliezed/oc_project_2_BookToScrape](https://git
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/Jliezed/oc_project_2_BookToScrape/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/Jliezed/oc_project_2_BookToScrape/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/Jliezed/oc_project_2_BookToScrape/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/Jliezed/oc_project_2_BookToScrape/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[oc-project-shield]: https://img.shields.io/badge/OPENCLASSROOMS-PROJECT-blueviolet?style=for-the-badge
+[web-scraping-shield]: https://img.shields.io/badge/-WEB%20SCRAPING-blue?style=for-the-badge
+[beautifulsoup-shield]: https://img.shields.io/badge/-BEAUTIFULSOUP-blue?style=for-the-badge
+[oc-project-url]: https://openclassrooms.com/fr/paths/518-developpeur-dapplication-python
