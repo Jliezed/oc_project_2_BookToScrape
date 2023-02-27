@@ -19,8 +19,8 @@
 -->
 
 [![oc-project-shield][oc-project-shield]][oc-project-url]
-[![web-scraping-shield][web-scraping-shield]][oc-project-url]
-[![beautiful-soup-shield][beautifulsoup-shield]][oc-project-url]
+[![web-scraping-shield][web-scraping-shield]][web-scraping-url]
+[![beautiful-soup-shield][beautifulsoup-shield]][beautifulsoup-url]
 
 
 
@@ -30,10 +30,10 @@
 <br />
 <div align="center">
 
-<h3 align="center">OC - PROJECT N°2 - BOOK TO SCRAPE</h3>
+<h1 align="center">OC - PROJECT N°2 - BOOK TO SCRAPE</h1>
 
   <p align="center">
-    From <a href="https://books.toscrape.com/"> Book To Scrape</a>, get product information of all products pages into a CSV file using Requests, Beautiful Soup, CSV and RE libraries.
+    From <a href="https://books.toscrape.com/"> Book To Scrape</a>, get product information of all products pages and save it into a CSV file using Requests, Beautiful Soup, CSV and RE libraries.
     <br />
 </p>
 </div>
@@ -164,6 +164,9 @@ It will also save product image for each product page.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [oc-project-shield]: https://img.shields.io/badge/OPENCLASSROOMS-PROJECT-blueviolet?style=for-the-badge
-[web-scraping-shield]: https://img.shields.io/badge/-WEB%20SCRAPING-blue?style=for-the-badge
-[beautifulsoup-shield]: https://img.shields.io/badge/-BEAUTIFULSOUP-blue?style=for-the-badge
 [oc-project-url]: https://openclassrooms.com/fr/paths/518-developpeur-dapplication-python
+
+[web-scraping-shield]: https://img.shields.io/badge/-WEB%20SCRAPING-blue?style=for-the-badge
+[web-scraping-url]: https://en.wikipedia.org/wiki/Web_scraping
+[beautifulsoup-shield]: https://img.shields.io/badge/-BEAUTIFULSOUP-blue?style=for-the-badge
+[beautifulsoup-url]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
